@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for event cards */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header Styles */
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Search bar and filters */
+#searchInput, #dateFilter, #categoryFilter {
+  margin-bottom: 15px;
+}
+
+/* Event Cards */
+.card {
+  margin: 15px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: #007bff;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+.card .btn {
+  background-color: #007bff;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.card .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Event Details Page */
+#event-name {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+#event-location, #event-date, #event-description {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Mobile and Tablet Responsiveness */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 2rem;
+  }
+
+  .container {
+      margin: 15px;
+  }
+
+  .card {
+      margin: 10px 0;
+  }
+
+  .card-body {
+      padding: 15px;
+  }
+
+  .card-title {
+      font-size: 1.1rem;
+  }
+
+  .card-text {
+      font-size: 0.9rem;
+  }
+}
+
+/* Further custom styling for mobile view */
+@media (max-width: 576px) {
+  #searchInput, #dateFilter, #categoryFilter {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .col-md-4 {
+      margin-bottom: 15px;
+  }
+
+  #event-location, #event-date, #event-description {
+      font-size: 1rem;
+  }
+
+  #event-name {
+      font-size: 1.8rem;
+  }
+}
+
