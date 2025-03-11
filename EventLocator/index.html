@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">Event Locator</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -24,35 +24,61 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1>Find the Best Events Near You</h1>
-            <p class="lead">Discover music festivals, exhibitions, food fairs, and more!</p>
+    <!-- Image Carousel with Overlay -->
+    <div id="carouselExampleInterval" class="carousel slide position-relative" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="assets/images/header.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="assets/images/header1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/images/header2.jpg" class="d-block w-100" alt="...">
+            </div>
         </div>
-    </header>
+        <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+            <h1 class="text-white fw-bold">FIND EVENTS IN YOUR CITY</h1>
+            <p class="lead text-white">Discover music festivals, exhibitions, food fairs, and more!</p>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 
     <!-- Search & Filters -->
     <div class="container mt-5">
-        <form id="search-form" class="row g-3 justify-content-center">
-            <div class="col-md-4">
-                <input type="text" name="search" class="form-control" placeholder="Search for events">
+        <div class="row justify-content-center">
+            <div class="col-md-10 text-center">
+                <form id="search-form" class="row g-3">
+                    <div class="col-md-4">
+                        <input type="text" name="search" class="form-control" placeholder="Search for events">
+                    </div>
+                    <div class="col-md-3">
+                        <select name="category" class="form-select">
+                            <option value="">All Categories</option>
+                            <option value="music">Music</option>
+                            <option value="art">Art</option>
+                            <option value="food">Food</option>
+                            <option value="tech">Tech</option>
+                            <option value="sports">Sports</option>
+                            <option value="business">Business</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" name="date" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary w-100">Search</button>
+                    </div>
+                </form>
             </div>
-            <div class="col-md-3">
-                <select name="category" class="form-select">
-                    <option value="">All Categories</option>
-                    <option value="music">Music</option>
-                    <option value="art">Art</option>
-                    <option value="food">Food</option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                <input type="date" name="date" class="form-control">
-            </div>
-            <div class="col-md-2">
-                <button type="submit" class="btn btn-primary w-100">Search</button>
-            </div>
-        </form>
+        </div>
     </div>
 
     <!-- Footer -->
