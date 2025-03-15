@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
     const events = [
         { id: 1, name: "Music Festival", category: "music", date: "2025-06-15", location: "Central Park", description: "Live performances from top artists!", image: "assets/images/EventFestival.jpeg" },
         { id: 2, name: "Art Showcase", category: "art", date: "2025-07-10", location: "Brooklyn Art Museum", description: "Discover amazing artwork by new and established artists.", image: "assets/images/EventSpeaker1.jpg" },
@@ -12,16 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 10, name: "Fashion Show", category: "fashion", date: "2026-02-05", location: "Fashion Avenue", description: "Witness the latest trends in fashion.", image: "assets/images/Eventfashion.jpeg" },
         { id: 11, name: "Yoga Retreat", category: "wellness", date: "2025-10-15", location: "Mountain Resort", description: "Relax and rejuvenate with yoga and meditation sessions.", image: "assets/images/Eventyoga.jpeg" },
         { id: 12, name: "Virtual Reality Gaming Expo", category: "technology", date: "2025-08-20", location: "Los Angeles", description: "Get hands-on with the latest virtual reality games and innovations.", image: "assets/images/EventGaming.jpeg" }
-    ]; 
-    
+    ];
 
-    // Function to display events on events.html
+    // Function to display events
     function displayEvents(eventsToShow) {
-        const eventContainer = document.getElementById('event-list');
-
+        const eventContainer = document.getElementById("event-list");
         if (!eventContainer) return;
 
-        eventContainer.innerHTML = '';
+        eventContainer.innerHTML = "";
 
         if (eventsToShow.length === 0) {
             eventContainer.innerHTML = `<p class="text-center text-danger">No events found.</p>`;
@@ -36,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="card-body">
                             <h5 class="card-title">${event.name}</h5>
                             <p class="card-text">${event.description}</p>
+                            <p><strong>Location:</strong> ${event.location}</p>
+                            <p><strong>Date:</strong> ${event.date}</p>
                             <a href="event-details.html?id=${event.id}" class="btn btn-primary">View Details</a>
                         </div>
                     </div>
@@ -44,25 +44,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Function to load event details in event-details.html
-    if (window.location.pathname.includes("event-details.html")) {
-        const params = new URLSearchParams(window.location.search);
-        const eventId = params.get("id");
-        const event = events.find(e => e.id == eventId);
+    // Function to filter events based on search
+    function filterEvents() {
+        const searchQuery = document.getElementById("search").value.toLowerCase();
+        const category = document.getElementById("category").value.toLowerCase();
+        const date = document.getElementById("date").value;
 
-        if (event) {
-            document.getElementById("event-name").textContent = event.name;
-            document.getElementById("event-description").textContent = event.description;
-            document.getElementById("event-date").textContent = event.date;
-            document.getElementById("event-location").textContent = event.location;
-            document.getElementById("event-image").src = event.image;
-        } else {
-            document.querySelector(".container").innerHTML = `<p class="text-center text-danger">Event not found.</p>`;
-        }
+        const filteredEvents = events.filter(event => {
+            return (
+                (searchQuery === "" || event.name.toLowerCase().includes(searchQuery) || event.description.toLowerCase().includes(searchQuery)) &&
+                (category === "" || event.category.toLowerCase() === category) &&
+                (date === "" || event.date === date)
+            );
+        });
+
+        displayEvents(filteredEvents);
     }
 
-    // Load events when on events.html
+    // Load events dynamically when `events.html` is opened
     if (window.location.pathname.includes("events.html")) {
         displayEvents(events);
     }
-}); 
+
+    // Search Button Event Listener
+    const searchBtn = document.getElementById("search-btn");
+    if (searchBtn) {
+        searchBtn.addEventListener("click", filterEvents);
+    }
+});
