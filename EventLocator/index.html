@@ -18,6 +18,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="events.html">Event List</a></li>
                 </ul>
             </div>
         </div>
@@ -50,16 +51,17 @@
         </button>
     </div>
 
-    <!-- Search & Filters -->
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-10 text-center">
-                <form id="search-form" class="row g-3">
+  <!-- Search & Filters -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10 text-center">
+            <form action="events.html" method="get">
+                <div class="row">
                     <div class="col-md-4">
-                        <input type="text" id="search" class="form-control" placeholder="Search for events">
+                        <input type="text" id="search" name="search" class="form-control" placeholder="Search for an event">
                     </div>
                     <div class="col-md-3">
-                        <select id="category" class="form-select">
+                        <select id="category" name="category" class="form-select">
                             <option value="">All Categories</option>
                             <option value="music">Music</option>
                             <option value="art">Art</option>
@@ -75,20 +77,16 @@
                         </select>
                     </div>
                     <div class="col-md-3">
-                        <input type="date" id="date" class="form-control">
+                        <input type="date" id="date" name="date" class="form-control">
                     </div>
                     <div class="col-md-2">
-                        <button type="button" id="search-btn" class="btn btn-primary w-100">Search</button>
+                        <button type="submit" class="btn btn-primary w-100">Search</button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
-
-    <!-- Results Section -->
-    <div class="container mt-4">
-        <div id="event-list" class="row mt-4"></div>
-    </div>
+</div>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3 mt-5">
