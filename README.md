@@ -19,14 +19,12 @@ EventLocator/
 │   ├── style.css       # Custom styles
 │── js/                 # Folder for JavaScript files
 │   ├── script.js       # Handles search, filtering, and event display
-│   ├── events.js       # Manages event data and dynamic content
-│   ├── details.js      # Handles event details display
 │── assets/             # Folder for images and other assets
 │   ├── images/         # Stores images used in the project
 
 
 ## Technologies Used
-- **HTML5** - Structure of the web pages
+- **HTML** - Structure of the web pages
 - **CSS & Bootstrap** - Styling and responsive design
 - **JavaScript** - Interactivity and dynamic content
 
@@ -67,5 +65,5 @@ EventLocator/
     ```
 
 ## Author
-Developed by **[Belinda Belange Larose]**
+Developed by **Belinda Belange Larose**
 
